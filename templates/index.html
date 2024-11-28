@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Duration Processor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            background-color: #444;
+            color: white;
+            border: 1px solid #555;
+            padding: 10px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Upload JSON File to Process URLs</h1>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".json" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if minutes is not none and seconds is not none %}
+        <div class="result">
+            <p>Total duration: {{ minutes }} minutes and {{ seconds }} seconds</p>
+        </div>
+    {% endif %}
+
+</body>
+</html>
