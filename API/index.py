@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import json
 import requests
-import os
 from io import StringIO
 from tqdm import tqdm
 
